@@ -55,5 +55,5 @@ Tired of applying to jobs that don't match your skills? This smart job portal us
 
 1. **Get the code**
    ```bash
-   git clone https://github.com/yourusername/ai-job-portal.git
-   cd ai-job-portal
+   git clone https://github.com/irfan2607/LLM-Powered-Job-Portal
+   cd LLM-Powered-Job-Portal
