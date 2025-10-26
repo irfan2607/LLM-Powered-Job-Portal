@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nl-sql-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nl-sql-backend
+  template:
+    metadata:
+      labels:
+        app: nl-sql-backend
+    spec:
+      containers:
+      - name: backend
+        image: nl-sql-backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: api-secrets
+              key: gemini-api-key
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nl-sql-backend-service
+spec:
+  selector:
+    app: nl-sql-backend
+  ports:
+  - port: 80
+    targetPort: 5000
+  type: LoadBalancer
