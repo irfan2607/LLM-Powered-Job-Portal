@@ -1,9 +1,5 @@
 # LLM-Powered-Job-Portal
-```markdown
 # AI Job Matchmaker 🧠💼
-
-![Job Portal](https://img.shields.io/badge/AI-Powered%20Matching-orange)
-![Ready to Use](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
 
 ## What is This Project? 🤔
 
